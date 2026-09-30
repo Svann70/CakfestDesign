@@ -45,14 +45,15 @@
         <!-- Top Header Strip -->
         <div class="hero-holo-top-bar">
           <div class="holo-logo-cell">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" class="holo-logo-svg">
               <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
               <circle cx="12" cy="12" r="3" fill="#fff"/>
             </svg>
             <div class="holo-logo-text">
               <strong>CAKFEST</strong>
-              <span style="color:#fd47d6; font-weight:800;">VOL.2</span>
+              <span class="holo-vol-tag">VOL.2</span>
             </div>
+            <button type="button" class="mobile-header-cta-btn" onclick="openRegisterModal()" title="Daftar Sekarang ke Cakfest Vol.2">DAFTAR</button>
           </div>
 
           <div class="holo-gradient-nav-strip">
@@ -286,6 +287,8 @@
 
         </div>
 
+      </div>
+
     </header>
 
   <main class="landing-main-flow">
@@ -296,10 +299,10 @@
          ========================================================================== -->
     <section class="landing-section brand-concept-section" id="make-it-pop" style="padding-top: 10px; padding-bottom: 24px;">
       <div class="landing-section-header">
-        <h2 style="margin: 0 0 10px 0; font-size: clamp(24px, 3.2vw, 36px);">
+        <h2 style="margin: 0 auto 10px auto; font-size: clamp(24px, 3.2vw, 36px); text-align: center;">
           MAKE IT POP: <span class="text-pop-magenta">TURN YOUR SPARK</span> <span class="text-electric-lime">INTO IMPACT</span>
         </h2>
-        <p style="font-size: 14.5px; max-width: 760px; margin: 0; color: #cbd5e1; line-height: 1.6;">
+        <p style="font-size: 14.5px; max-width: 760px; margin: 0 auto; text-align: center; color: #cbd5e1; line-height: 1.6;">
           Cakfest Vol.2 memadukan 4 pilar penggerak untuk menciptakan wadah kolaborasi, ruang kreativitas, dan kompetisi bergengsi bagi generasi muda.
         </p>
       </div>
@@ -966,13 +969,12 @@
     </div>
   </div>
 
-  <!-- Floating System Toast Alert -->
-  <div class="floating-toast-alert" id="systemToast">
-    <div>
-      <strong id="toastTitle">SISTEM UPDATE</strong>
-      <span id="toastDesc">Data berhasil diperbarui.</span>
-    </div>
-  </div>
+
+
+  <!-- Floating Back to Top Button for Mobile Ergonomics -->
+  <button type="button" class="floating-back-to-top" id="backToTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <script src="app.js"></script>
 </body>

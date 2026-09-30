@@ -859,6 +859,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initParallaxBackground();
   initTimelineCalendar();
+  initBackToTop();
 
   // Parse category parameter if directed from landing page (e.g. portal.html?cat=MLBB)
   try {
@@ -1171,5 +1172,22 @@ function toggleRundownTable() {
 function initTimelineCalendar() {
   // Initialize on peak month (Januari 2027)
   renderCalendar('2027-01');
+}
+
+/* ==========================================================================
+   FLOATING BACK TO TOP CONTROLLER (Mobile Ergonomics)
+   ========================================================================== */
+function initBackToTop() {
+  const btn = document.getElementById('backToTopBtn');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    if (scrollY > 380) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, { passive: true });
 }
 
