@@ -540,8 +540,11 @@ function closeWindowModal(modalId) {
 
 function showToastNotification(title, desc) {
   const toast = document.getElementById('systemToast');
-  document.getElementById('toastTitle').textContent = title;
-  document.getElementById('toastDesc').textContent = desc;
+  if (!toast) return;
+  const tTitle = document.getElementById('toastTitle');
+  const tDesc = document.getElementById('toastDesc');
+  if (tTitle) tTitle.textContent = title;
+  if (tDesc) tDesc.textContent = desc;
 
   toast.classList.add('show');
   setTimeout(() => {
@@ -555,9 +558,67 @@ function copyMeetLink() {
   });
 }
 
+function openBookletModal(category = '') {
+  const catNames = {
+    CCC: 'Cerdas Cermat (CCC Decathlon)',
+    MLBB: 'Mobile Legends: Bang Bang',
+    BASKET: '3x3 Basketball Battle',
+    FUTSAL: 'Futsal Championship',
+    TARI: 'Modern Dance & Tari Kreasi',
+    BAND: 'Solo Vokal & Band Akustik'
+  };
+  const cName = catNames[category] || category || 'Kompetisi Cakfest Vol.2';
+  
+  if (typeof playRetroTone === 'function') {
+    playRetroTone(523.25, 'triangle', 0.12);
+  }
+  
+  const titleEl = document.getElementById('rulebookModalTitle');
+  if (titleEl) {
+    titleEl.textContent = category 
+      ? `BUKU PANDUAN TEKNIS & BOOKLET // ${category} - ${cName.toUpperCase()}`
+      : 'BUKU PANDUAN TEKNIS RESMI & BOOKLET // CAKFEST 2027';
+  }
+  
+  const subtitleEl = document.getElementById('rulebookModalSubtitle');
+  if (subtitleEl) {
+    subtitleEl.textContent = category
+      ? `Buku Pedoman Teknis & Regulasi Resmi: ${cName}`
+      : 'Buku Pedoman Teknis & Regulasi Peserta v2.4';
+  }
+  
+  const descEl = document.getElementById('rulebookModalDesc');
+  if (descEl) {
+    descEl.textContent = category
+      ? `Berisi seluruh regulasi pertandingan cabang ${cName}, batas toleransi keterlambatan, ketentuan KTM/Kartu Pelajar, sistem skor, bagan turnamen, dan rundown teknis.`
+      : 'Berisi seluruh regulasi pertandingan 6 cabor, ketentuan KTM, tata tertib panggung, sistem poin decathlon CCC, jadwal technical meeting, dan format walk-out.';
+  }
+
+  const dlBtn = document.getElementById('modalDownloadPdfBtn');
+  if (dlBtn) {
+    dlBtn.setAttribute('data-category', category);
+  }
+
+  openWindowModal('rulebookModal');
+}
+
 function downloadPdf() {
-  playRetroTone(587.33, 'triangle', 0.12);
-  showToastNotification('UNDUH BERKAS', 'Buku Panduan Teknis & Regulasi CAKFEST 2027 (PDF 1.8 MB) berhasil diunduh.');
+  const dlBtn = document.getElementById('modalDownloadPdfBtn');
+  const category = dlBtn ? dlBtn.getAttribute('data-category') : '';
+  const catNames = {
+    CCC: 'CCC Decathlon',
+    MLBB: 'Mobile Legends: Bang Bang',
+    BASKET: '3x3 Basketball Battle',
+    FUTSAL: 'Futsal Championship',
+    TARI: 'Modern Dance & Tari Kreasi',
+    BAND: 'Solo Vokal & Band Akustik'
+  };
+  const label = catNames[category] ? `Cabang ${catNames[category]}` : 'CAKFEST 2027';
+  
+  if (typeof playRetroTone === 'function') {
+    playRetroTone(587.33, 'triangle', 0.12);
+  }
+  showToastNotification('UNDUH BERKAS', `Booklet Panduan Teknis & Regulasi ${label} (PDF 1.8 MB) berhasil diunduh.`);
   setTimeout(() => {
     closeWindowModal('rulebookModal');
   }, 700);
