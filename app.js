@@ -796,6 +796,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initClock();
   startCdTimer();
   initScrollSpy();
+  initParallaxBackground();
+  initTimelineCalendar();
 
   // Parse category parameter if directed from landing page (e.g. portal.html?cat=MLBB)
   try {
@@ -851,3 +853,262 @@ function toggleFaq(el) {
     playRetroTone(item.classList.contains('active') ? 440 : 330, 'sine', 0.08);
   }
 }
+
+/* ==========================================================================
+   DYNAMIC PARALLAX BACKGROUND CONTROLLER (Revisi Point 2)
+   Responds smoothly to page scrolling with subtle layered depth
+   ========================================================================== */
+function initParallaxBackground() {
+  const bgImg = document.getElementById('parallaxImg');
+  const bgGlow = document.getElementById('parallaxGlow');
+  const bgGrid = document.getElementById('parallaxGrid');
+  
+  if (!bgImg && !bgGlow && !bgGrid) return;
+
+  let ticking = false;
+
+  function updateParallax() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+    
+    // Smooth layered parallax depth for full-length extended background
+    const imgTranslateY = scrollY * 0.035;
+    const glowTranslateY = scrollY * 0.08;
+    const gridTranslateY = scrollY * 0.02;
+    
+    if (bgImg) bgImg.style.transform = `translate3d(0, ${imgTranslateY}px, 0)`;
+    if (bgGlow) bgGlow.style.transform = `translate3d(0, ${glowTranslateY}px, 0)`;
+    if (bgGrid) bgGrid.style.transform = `translate3d(0, ${gridTranslateY}px, 0)`;
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Initial trigger
+  updateParallax();
+}
+
+/* ==========================================================================
+   INTERACTIVE EVENT CALENDAR SYSTEM (Revisi Point 3)
+   Displays event title and venue directly on the calendar dates
+   ========================================================================== */
+const cakfestCalendarData = {
+  months: [
+    { key: '2026-11', label: 'NOVEMBER 2026', year: 2026, monthIndex: 10, totalDays: 30 },
+    { key: '2026-12', label: 'DESEMBER 2026', year: 2026, monthIndex: 11, totalDays: 31 },
+    { key: '2027-01', label: 'JANUARI 2027 ★ PEAK', year: 2027, monthIndex: 0, totalDays: 31 }
+  ],
+  events: [
+    {
+      date: '2026-11-30',
+      title: 'Closing Pendaftaran Batch 1',
+      venue: 'Online Website Resmi',
+      time: 'Senin, 30 Nov 2026 // Pukul 23.59 WIB',
+      tag: 'REGISTRASI RESMI',
+      type: 'warning',
+      desc: 'Batas akhir submit formulir online dan pendaftaran tim untuk seluruh 6 cabang kompetisi Cakfest Vol.2. Pastikan seluruh berkas KTM delegasi telah lengkap.'
+    },
+    {
+      date: '2026-12-01',
+      title: 'Verifikasi Berkas Mulai',
+      venue: 'Helpdesk Panitia',
+      time: '01 - 10 Des 2026 // 09.00 - 16.00 WIB',
+      tag: 'VERIFIKASI ADMINISTRASI',
+      type: 'info',
+      desc: 'Pemeriksaan keabsahan kartu identitas mahasiswa/pelajar seluruh tim peserta oleh sekretariat kompetisi.'
+    },
+    {
+      date: '2026-12-10',
+      title: 'Batas Akhir Validasi Dokumen',
+      venue: 'Helpdesk Panitia Cakfest',
+      time: 'Kamis, 10 Des 2026 // 17.00 WIB',
+      tag: 'CLOSING VERIFIKASI',
+      type: 'warning',
+      desc: 'Penutupan masa perbaikan berkas administrasi dan finalisasi kontingen resmi siap tanding.'
+    },
+    {
+      date: '2026-12-15',
+      title: 'Technical Meeting & Live Drawing',
+      venue: 'Auditorium & GMeet Live',
+      time: 'Selasa, 15 Des 2026 // 19.30 WIB',
+      tag: 'TECHNICAL MEETING',
+      type: 'info',
+      desc: 'Pertemuan teknis perwakilan seluruh kontingen, sosialisasi rulebook turnamen, dan live streaming undian bagan pertandingan.'
+    },
+    {
+      date: '2027-01-08',
+      title: 'Opening & Babak 1/4 Final',
+      venue: 'GOR & Hall Utama',
+      time: 'Jumat, 08 Jan 2027 // 08.00 - 18.00 WIB',
+      tag: 'HARI KE-1: KICK OFF',
+      type: 'match',
+      desc: 'Upacara pembukaan Cakfest Vol.2, defile kontingen, dan kick-off pertandingan perempat final semua cabang kompetisi.'
+    },
+    {
+      date: '2027-01-09',
+      title: 'Semifinal & Dance Showcase',
+      venue: 'Main Stage Kampus',
+      time: 'Sabtu, 09 Jan 2027 // 09.00 - 19.30 WIB',
+      tag: 'HARI KE-2: SEMIFINAL',
+      type: 'match',
+      desc: 'Pertandingan semifinal penentuan tiket partai puncak, panggung parade festival band, dan showcase tari kreasi.'
+    },
+    {
+      date: '2027-01-10',
+      title: 'Grand Final & Awarding Night',
+      venue: 'Panggung Spektakuler Cakfest',
+      time: 'Minggu, 10 Jan 2027 // 13.00 - 22.00 WIB',
+      tag: 'PUNCAK FESTIVAL (PEAK)',
+      type: 'peak',
+      desc: 'Pertarungan grand final seluruh cabang lomba, penganugerahan Piala Bergilir Rektorat, konser bintang tamu spektakuler, dan malam penganugerahan juara.'
+    }
+  ]
+};
+
+let currentSelectedMonth = '2027-01';
+let currentSelectedEvent = null;
+
+function renderCalendar(monthKey) {
+  const container = document.getElementById('calDaysGrid');
+  const monthLabel = document.getElementById('calCurrentMonthLabel');
+  if (!container) return;
+
+  const monthObj = cakfestCalendarData.months.find(m => m.key === monthKey) || cakfestCalendarData.months[2];
+  currentSelectedMonth = monthObj.key;
+
+  if (monthLabel) {
+    monthLabel.textContent = monthObj.label;
+  }
+
+  // Update month tabs active status
+  document.querySelectorAll('.cal-tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-month') === monthObj.key);
+  });
+
+  // Calculate first day of the month (Monday = 0, ..., Sunday = 6)
+  const firstDay = new Date(monthObj.year, monthObj.monthIndex, 1);
+  const startDayIndex = (firstDay.getDay() + 6) % 7;
+
+  let html = '';
+
+  // Leading empty cells
+  for (let i = 0; i < startDayIndex; i++) {
+    html += '<div class="cal-day-cell empty-cell" aria-hidden="true"></div>';
+  }
+
+  // Generate days of the month
+  for (let day = 1; day <= monthObj.totalDays; day++) {
+    const dayStr = String(day).padStart(2, '0');
+    const dateStr = `${monthObj.key}-${dayStr}`;
+    const ev = cakfestCalendarData.events.find(e => e.date === dateStr);
+
+    if (ev) {
+      const isPeak = ev.type === 'peak';
+      const pillClass = isPeak ? 'pill-peak' : (ev.type === 'warning' ? 'pill-warning' : (ev.type === 'info' ? 'pill-info' : ''));
+      const isSelected = (currentSelectedEvent && currentSelectedEvent.date === dateStr) || (!currentSelectedEvent && dateStr === '2027-01-10');
+
+      html += `
+        <div class="cal-day-cell is-event ${isPeak ? 'has-event-peak' : ''} ${isSelected ? 'active-selected' : ''}" 
+             data-date="${dateStr}" 
+             onclick="selectCalendarEvent('${dateStr}')" 
+             tabindex="0" 
+             role="button" 
+             title="${ev.title} - ${ev.venue}">
+          <div class="cal-day-num">${day}</div>
+          <div class="cal-day-events">
+            <div class="cal-event-pill ${pillClass}">
+              <span class="cal-event-title-text">${ev.title}</span>
+              <span class="cal-event-venue-text">📍 ${ev.venue}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    } else {
+      html += `
+        <div class="cal-day-cell">
+          <div class="cal-day-num">${day}</div>
+        </div>
+      `;
+    }
+  }
+
+  container.innerHTML = html;
+
+  // Sync spotlight card with default or active event
+  const monthEvents = cakfestCalendarData.events.filter(e => e.date.startsWith(monthObj.key));
+  if (currentSelectedEvent && currentSelectedEvent.date.startsWith(monthObj.key)) {
+    updateCalendarSpotlight(currentSelectedEvent);
+  } else if (monthEvents.length > 0) {
+    // Default to the last (peak or most notable) event of the month
+    const defaultEv = monthEvents[monthEvents.length - 1];
+    updateCalendarSpotlight(defaultEv);
+  }
+}
+
+function selectCalendarMonth(monthKey) {
+  playRetroTone(480, 'sine', 0.08);
+  renderCalendar(monthKey);
+}
+
+function changeCalendarMonth(delta) {
+  const currentIdx = cakfestCalendarData.months.findIndex(m => m.key === currentSelectedMonth);
+  let nextIdx = currentIdx + delta;
+  if (nextIdx < 0) nextIdx = 0;
+  if (nextIdx >= cakfestCalendarData.months.length) nextIdx = cakfestCalendarData.months.length - 1;
+  
+  if (nextIdx !== currentIdx) {
+    selectCalendarMonth(cakfestCalendarData.months[nextIdx].key);
+  }
+}
+
+function selectCalendarEvent(dateStr) {
+  const ev = cakfestCalendarData.events.find(e => e.date === dateStr);
+  if (!ev) return;
+
+  currentSelectedEvent = ev;
+  playRetroTone(ev.type === 'peak' ? 660 : 520, 'triangle', 0.1);
+
+  document.querySelectorAll('.cal-day-cell.is-event').forEach(cell => {
+    cell.classList.toggle('active-selected', cell.getAttribute('data-date') === dateStr);
+  });
+
+  updateCalendarSpotlight(ev);
+}
+
+function updateCalendarSpotlight(ev) {
+  const tagEl = document.getElementById('spotlightTag');
+  const timeEl = document.getElementById('spotlightTime');
+  const titleEl = document.getElementById('spotlightTitle');
+  const descEl = document.getElementById('spotlightDesc');
+  const venueEl = document.getElementById('spotlightVenue');
+
+  if (tagEl) tagEl.textContent = ev.tag;
+  if (timeEl) timeEl.textContent = ev.time;
+  if (titleEl) titleEl.textContent = ev.title;
+  if (descEl) descEl.textContent = ev.desc;
+  if (venueEl) venueEl.textContent = ev.venue;
+}
+
+function toggleRundownTable() {
+  const wrapper = document.getElementById('rundownTableWrapper');
+  const btnText = document.getElementById('toggleTableText');
+  if (!wrapper) return;
+
+  const isHidden = wrapper.style.display === 'none' || !wrapper.style.display;
+  wrapper.style.display = isHidden ? 'block' : 'none';
+  if (btnText) {
+    btnText.textContent = isHidden ? 'Tutup Format Tabel Rundown' : 'Tampilkan Format Tabel Rundown Lengkap';
+  }
+  playRetroTone(isHidden ? 587.33 : 392, 'sawtooth', 0.08);
+}
+
+function initTimelineCalendar() {
+  // Initialize on peak month (Januari 2027)
+  renderCalendar('2027-01');
+}
+
