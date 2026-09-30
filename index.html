@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAKFEST 2027 // Cakrawala Festival - Space Exploration &amp; Cyber-Retro Arena</title>
-  <meta name="description" content="Portal Resmi Cakrawala Festival (CAKFEST) 2027 - Universitas Cakrawala. Platform Tiga Fase: Registrasi Mandiri, Bagan Turnamen Live Score, &amp; Arsip Juara.">
-  <!-- Y2K Retro Fonts: Chakra Petch, Silkscreen, VT323, Plus Jakarta Sans -->
+  <title>CAKFEST VOL.2 // Universitas Cakrawala - Make It Pop: Turn Your Spark Into Impact</title>
+  <meta name="description" content="Portal Resmi Cakrawala Festival (CAKFEST) VOL.2 - Universitas Cakrawala. Make It Pop: Turn Your Spark Into Impact. Ajang kreativitas, edukasi, dan kompetisi bergengsi untuk pelajar &amp; mahasiswa nasional.">
+  <!-- Brand Fonts: Aileron, Chakra Petch, Silkscreen, Sora, Space Grotesk, VT323 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,700;1,700;1,800&family=Silkscreen:wght@400;700&family=Sora:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
   
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Subtle Perspective Grid Canvas (referensi2 & referensi3) -->
+  <!-- Subtle Perspective Grid Canvas -->
   <div class="cyber-grid-canvas"></div>
   
   <!-- CRT Scanline Screen Overlay (Toggleable via Titlebar) -->
@@ -22,19 +23,24 @@
 
   <!-- ==========================================================================
        MAIN LANDING PAGE WORKSPACE CONTAINER
-       Natural, Flowing Section Hierarchy
+       Layout Flow:
+       1. Make It Pop (Hero + Brand Concept + 4 Pillars + Prominent Countdown)
+       2. Lomba (6 Cabang Kompetisi, Only "Daftar Sekarang" button)
+       3. Timeline Perlombaan / Acara (4-Phase Milestones + Rundown Table)
+       4. FAQ (Interactive Accordion)
+       5. Footer
        ========================================================================== -->
   <main class="landing-main-flow">
 
     <!-- ==========================================================================
-         SECTION 1: HERO ARENA (#beranda)
-         HOLOGRAPHIC HERO MASTER CARD (Direct Tribute to HeroCardReference.png)
+         SECTION 1: HERO & MAKE IT POP ARENA (#beranda / #make-it-pop)
+         Holographic Master Card, Canva Brand Guidelines Palette, Prominent Countdown
          ========================================================================== -->
     <section class="landing-section hero-section-arena" id="beranda">
       
       <div class="hero-holo-card">
         
-        <!-- Top Header Strip (Exact HeroCardReference.png) -->
+        <!-- Top Header Strip -->
         <div class="hero-holo-top-bar">
           <div class="holo-logo-cell">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5">
@@ -43,104 +49,93 @@
             </svg>
             <div class="holo-logo-text">
               <strong>CAKFEST</strong>
-              <span>2027</span>
+              <span style="color:#fd47d6; font-weight:800;">VOL.2</span>
             </div>
           </div>
 
           <div class="holo-gradient-nav-strip">
-            <a href="#kompetisi" class="holo-nav-link">6 CABOR</a>
-            <a href="#guest-star" class="holo-nav-link">GUEST ARTIST</a>
-            <a href="portal.html" class="holo-nav-link">PORTAL &amp; BAGAN</a>
-            <a href="#jadwal-faq" class="holo-nav-link">JADWAL</a>
-            <a href="#galeri" class="holo-nav-link">ARCHIVE</a>
-          </div>
-
-          <div class="holo-checkerboard-cell">
-            <div class="xp-designed-badge" title="Certified for Windows XP // Y2K Retro System">
-              <span class="xp-badge-sub">Designed for</span>
-              <div class="xp-badge-brand">
-                <svg viewBox="0 0 48 48" width="12" height="12" fill="none">
-                  <path d="M7 11.5C11.5 8 18.5 13 22 11V23.5C18.5 25.5 11.5 20.5 7 24V11.5Z" fill="#ef4444"/>
-                  <path d="M25 10.5C29 8 36.5 12.5 41 10V22C36.5 24.5 29 20 25 22.5V10.5Z" fill="#22c55e"/>
-                  <path d="M7 26.5C11.5 23 18.5 28 22 26V38.5C18.5 40.5 11.5 35.5 7 39V26.5Z" fill="#3b82f6"/>
-                  <path d="M25 25C29 22.5 36.5 27 41 24.5V36.5C36.5 39 29 34.5 25 37V25Z" fill="#eab308"/>
-                </svg>
-                <span class="xp-text-win">Windows</span>
-                <span class="xp-text-xp">XP</span>
-              </div>
-            </div>
+            <a href="#make-it-pop" class="holo-nav-link">MAKE IT POP</a>
+            <a href="#kompetisi" class="holo-nav-link">LOMBA</a>
+            <a href="#timeline" class="holo-nav-link">TIMELINE</a>
+            <a href="#faq" class="holo-nav-link">FAQ</a>
+            <button type="button" class="holo-nav-btn-apply" onclick="openRegisterModal()" title="Daftar Sekarang">DAFTAR SEKARANG</button>
           </div>
         </div>
 
-        <!-- Split 2-Column Body (Exact HeroCardReference.png) -->
+        <!-- Split 2-Column Body -->
         <div class="hero-holo-split-body">
           
-          <!-- Left Column: High-Contrast White Background, Bold Typography, Dual Actions -->
+          <!-- Left Column: High-Contrast, Make It Pop Branding & Prominent Countdown -->
           <div class="hero-holo-left-content">
             <div class="hero-holo-eyebrow">
               <span class="holo-dot"></span>
-              <svg class="winxp-wave-icon" viewBox="0 0 48 48" width="13" height="13" fill="none" style="vertical-align:middle; margin-right:3px;">
-                <path d="M7 11.5C11.5 8 18.5 13 22 11V23.5C18.5 25.5 11.5 20.5 7 24V11.5Z" fill="#ff4d4d"/>
-                <path d="M25 10.5C29 8 36.5 12.5 41 10V22C36.5 24.5 29 20 25 22.5V10.5Z" fill="#51cf66"/>
-                <path d="M7 26.5C11.5 23 18.5 28 22 26V38.5C18.5 40.5 11.5 35.5 7 39V26.5Z" fill="#339af0"/>
-                <path d="M25 25C29 22.5 36.5 27 41 24.5V36.5C36.5 39 29 34.5 25 37V25Z" fill="#fcc419"/>
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#fd47d6" stroke-width="2.5" style="vertical-align:middle; margin-right:4px;">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
               </svg>
               <span>CAKFEST VOL.2 // UNIVERSITAS CAKRAWALA</span>
             </div>
 
             <h1 class="hero-holo-main-title">
-              BEYOND<br>
-              THE HORIZONS
-              <svg class="hero-title-sparkle-star" viewBox="0 0 24 24" width="28" height="28" fill="#fd47d6" aria-hidden="true">
-                <path d="M12 0L14.8 9.2L24 12L14.8 14.8L12 24L9.2 14.8L0 12L9.2 9.2L12 0Z"/>
-              </svg>
+              MAKE IT <span class="pop-text">POP</span>
             </h1>
 
-            <p class="hero-holo-lead-desc">
-              Pesta akbar kompetisi mahasiswa &amp; pelajar nasional Universitas Cakrawala. <em>Make It Pop: Turn Your Spark Into Impact</em> dalam 6 cabang kompetisi bergengsi.
+            <p class="hero-holo-lead-desc" style="font-size:15px; margin-bottom:14px; color:#f1f5f9; line-height:1.65;">
+              <strong>"Turn Your Spark Into Impact"</strong> &mdash; <em>"Your Spark. Your Moment. Your Impact."</em><br>
+              Ajang kreativitas, edukasi, dan festival kompetitif terintegrasi untuk pelajar SMA/SMK/MA serta mahasiswa se-Indonesia.
             </p>
 
-            <!-- Prominent Dual Action Buttons (HeroCardReference.png + sga-cakrawala.org) -->
-            <div class="hero-holo-actions-deck">
-              <a href="portal.html#pendaftaran" class="btn-holo-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                <span>DAFTAR SEKARANG</span>
-              </a>
-
-              <button class="btn-holo-secondary" onclick="openWindowModal('rulebookModal')" title="Unduh Buku Panduan Resmi CAKFEST 2027">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                </svg>
-                <span>BUKU PANDUAN</span>
-                <span class="btn-holo-badge">PDF 1.8M</span>
-              </button>
-            </div>
-
-            <!-- Bottom Integrated Status Strip -->
-            <div class="hero-holo-status-strip">
-              <div class="holo-status-item">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>DEADLINE BATCH 1:</span>
-                <strong id="heroCountdownTimer">64 Hari 08 Jam 42 Menit</strong>
-              </div>
-              <div class="holo-status-item holo-odometer-box">
-                <span class="holo-status-label">KUOTA:</span>
-                <div class="retro-odometer-display">
-                  <span class="odometer-digit">1</span>
-                  <span class="odometer-digit">1</span>
-                  <span class="odometer-digit">2</span>
-                  <span class="odometer-sep">/</span>
-                  <span class="odometer-digit max">1</span>
-                  <span class="odometer-digit max">2</span>
-                  <span class="odometer-digit max">8</span>
+            <!-- PROMINENT HIGH-VISIBILITY COUNTDOWN MEGA CARD -->
+            <div class="hero-countdown-showcase">
+              <div class="countdown-showcase-header">
+                <div class="live-pulse-badge">
+                  <span class="live-dot pulse"></span>
+                  <span class="live-text">COUNTDOWN MENUJU CAKFEST VOL.2</span>
+                </div>
+                <div class="countdown-target-info">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>DEADLINE BATCH 1: <strong>30 NOV 2026</strong></span>
                 </div>
               </div>
+
+              <div class="countdown-tiles-matrix">
+                <div class="countdown-digit-box">
+                  <div class="digit-number" id="countDays">00</div>
+                  <div class="digit-label">HARI</div>
+                </div>
+                <div class="countdown-digit-sep">:</div>
+                <div class="countdown-digit-box">
+                  <div class="digit-number" id="countHours">00</div>
+                  <div class="digit-label">JAM</div>
+                </div>
+                <div class="countdown-digit-sep">:</div>
+                <div class="countdown-digit-box">
+                  <div class="digit-number" id="countMins">00</div>
+                  <div class="digit-label">MENIT</div>
+                </div>
+                <div class="countdown-digit-sep">:</div>
+                <div class="countdown-digit-box digit-box-secs">
+                  <div class="digit-number text-electric-lime" id="countSecs">00</div>
+                  <div class="digit-label text-electric-lime">DETIK</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Prominent Dual Actions Deck -->
+            <div class="hero-holo-actions-deck">
+              <button type="button" class="btn-holo-primary" onclick="openRegisterModal()" title="Daftar Sekarang ke Cakfest Vol.2">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <span>DAFTAR SEKARANG</span>
+              </button>
+
+              <a href="#kompetisi" class="btn-holo-secondary" title="Jelajahi 6 Cabang Kompetisi">
+                <span>LIHAT LOMBA</span>
+              </a>
             </div>
 
           </div>
 
-          <!-- Right Column: Expansive Metallic Holographic Visual (HeroCardReference.png) -->
+          <!-- Right Column: Expansive Metallic Holographic Visual, Mascot & Winamp -->
           <div class="hero-holo-right-visual">
             <img src="hero_holo_visual_hd.png" alt="Cakfest Holographic Cosmic Visual Art" class="hero-holo-main-photo">
 
@@ -300,178 +295,20 @@
     </section>
 
     <!-- ==========================================================================
-         SECTION 2: SPECIAL GUEST STAR TEASER SHOWCASE (#guest-star)
-         High-Impact Awarding Night & Concert Announcement
+         BRAND PILLARS: MAKE IT POP (#make-it-pop)
+         Canva Brand Guidelines: 4 Pilar Penggerak Cakfest Vol.2
          ========================================================================== -->
-    <section class="landing-section guest-star-section" id="guest-star">
-      <div class="win-xp-window guest-star-window">
-        <!-- Windows XP Classic Titlebar -->
-        <div class="win-xp-titlebar">
-          <div class="win-xp-title-left">
-            <span class="win-xp-icon">
-              <svg class="winxp-wave-icon" viewBox="0 0 48 48" width="14" height="14" fill="none">
-                <path d="M7 11.5C11.5 8 18.5 13 22 11V23.5C18.5 25.5 11.5 20.5 7 24V11.5Z" fill="#ff4d4d"/>
-                <path d="M25 10.5C29 8 36.5 12.5 41 10V22C36.5 24.5 29 20 25 22.5V10.5Z" fill="#51cf66"/>
-                <path d="M7 26.5C11.5 23 18.5 28 22 26V38.5C18.5 40.5 11.5 35.5 7 39V26.5Z" fill="#339af0"/>
-                <path d="M25 25C29 22.5 36.5 27 41 24.5V36.5C36.5 39 29 34.5 25 37V25Z" fill="#fcc419"/>
-              </svg>
-            </span>
-            <span class="win-xp-title-text">Aero_City_Dream_01.exe</span>
-            <span class="win-xp-title-tag">// Frutiger_Aero_Dreamcore_OS</span>
-          </div>
-          <div class="win-xp-controls">
-            <span class="xp-ctrl-btn xp-min">_</span>
-            <span class="xp-ctrl-btn xp-max">&#9633;</span>
-            <span class="xp-ctrl-btn xp-close">&times;</span>
-          </div>
-        </div>
-
-        <!-- Classic XP Menubar with XP Official Seal Badge -->
-        <div class="win-xp-menubar" style="display:flex; justify-content:space-between; align-items:center;">
-          <div style="display:flex; gap:16px;">
-            <span><u>F</u>ile</span>
-            <span><u>D</u>ream System</span>
-            <span><u>A</u>ero City Live</span>
-            <span><u>C</u>ompilation Disc</span>
-            <span><u>H</u>elp</span>
-          </div>
-          <div class="xp-designed-badge" title="Certified for Windows XP // Y2K Retro System" style="margin-right:4px;">
-            <span class="xp-badge-sub">Designed for</span>
-            <div class="xp-badge-brand">
-              <svg viewBox="0 0 48 48" width="12" height="12" fill="none">
-                <path d="M7 11.5C11.5 8 18.5 13 22 11V23.5C18.5 25.5 11.5 20.5 7 24V11.5Z" fill="#ef4444"/>
-                <path d="M25 10.5C29 8 36.5 12.5 41 10V22C36.5 24.5 29 20 25 22.5V10.5Z" fill="#22c55e"/>
-                <path d="M7 26.5C11.5 23 18.5 28 22 26V38.5C18.5 40.5 11.5 35.5 7 39V26.5Z" fill="#3b82f6"/>
-                <path d="M25 25C29 22.5 36.5 27 41 24.5V36.5C36.5 39 29 34.5 25 37V25Z" fill="#eab308"/>
-              </svg>
-              <span class="xp-text-win">Windows</span>
-              <span class="xp-text-xp">XP</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Master Frutiger Aero Showcase Stage (gueststar.png Tribute) -->
-        <div class="guest-aero-master-stage">
-
-          <!-- Chrome Headline in Planet Kosmos -->
-          <div class="guest-aero-title-block">
-            <h2 class="guest-aero-headline">A SCREEN FULL OF DREAMS</h2>
-            <div class="guest-aero-subtags">
-              <span class="aero-genre-pill aero-glass">FRUTIGER AERO</span>
-              <span class="aero-genre-pill dreamcore-glass">DREAMCORE</span>
-              <span class="aero-genre-pill xp-glass">
-                <svg viewBox="0 0 48 48" width="13" height="13" fill="none">
-                  <path d="M7 11.5C11.5 8 18.5 13 22 11V23.5C18.5 25.5 11.5 20.5 7 24V11.5Z" fill="#ff6b6b"/>
-                  <path d="M25 10.5C29 8 36.5 12.5 41 10V22C36.5 24.5 29 20 25 22.5V10.5Z" fill="#69db7c"/>
-                  <path d="M7 26.5C11.5 23 18.5 28 22 26V38.5C18.5 40.5 11.5 35.5 7 39V26.5Z" fill="#4dabf7"/>
-                  <path d="M25 25C29 22.5 36.5 27 41 24.5V36.5C36.5 39 29 34.5 25 37V25Z" fill="#ffd43b"/>
-                </svg>
-                <span>WINDOWS XP LIVE STAGE</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- 2-Column Split: Left CRT Stage (gueststar.png) + Right Concert Lineup -->
-          <div class="guest-aero-split-stage">
-            
-            <!-- Left Column: The iMac G3 / CRT Monitor Frame with gueststar.png artwork -->
-            <div class="aero-crt-monitor-frame">
-              <div class="aero-monitor-bezel">
-                <div class="aero-screen-glass">
-                  <img src="gueststar.png" alt="A Screen Full of Dreams - Aero City Live Stage" class="gueststar-art-img">
-                  <!-- Inset Screen Tag -->
-                  <div class="aero-screen-caption-badge">
-                    <span class="pulse-cyan-dot"></span>
-                    <span>welcome to AERO CITY // el futuro ya es nostalgia</span>
-                  </div>
-                </div>
-                <!-- Translucent Aqua Chin with Speaker Grills & Power Button -->
-                <div class="aero-monitor-chin">
-                  <div class="aero-speaker-grille left">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                  <div class="aero-power-orb" title="Aero Power Online"></div>
-                  <div class="aero-speaker-grille right">
-                    <span></span><span></span><span></span><span></span><span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Right Column: Concert & Guest Star Information -->
-            <div class="guest-aero-details-col">
-              
-              <!-- Awarding Night & Concert Info Card -->
-              <div class="aero-concert-info-card">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                  <div class="concert-header-tag">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-                    <span>MALAM PENGANUGERAHAN &amp; KONSER PENUTUPAN</span>
-                  </div>
-                  <img src="assetsdisc.png" alt="Cakfest Holographic Disc" style="width: 48px; height: 48px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(168,85,247,0.4));">
-                </div>
-                <h3>LINEUP BINTANG TAMU NASIONAL</h3>
-                <p>Awarding night piala juara 6 cabor &amp; panggung konser indoor spektakuler. Free akses untuk seluruh kontingen terdaftar!</p>
-                
-                <div class="aero-specs-pills-grid">
-                  <div class="aero-spec-bubble">
-                    <span>STAGE ARENA</span>
-                    <strong>GRAND DOME</strong>
-                  </div>
-                  <div class="aero-spec-bubble">
-                    <span>TANGGAL SHOW</span>
-                    <strong>10 JANUARI 2027</strong>
-                  </div>
-                  <div class="aero-spec-bubble">
-                    <span>STATUS TIKET</span>
-                    <strong class="text-accent">FREE KONTINGEN</strong>
-                  </div>
-                  <div class="aero-spec-bubble">
-                    <span>REVEAL DATE</span>
-                    <strong>20 JAN 2027</strong>
-                  </div>
-                </div>
-
-                <!-- Action Deck (Streamlined to 1 Primary Action + 1 Subtle Control) -->
-                <div class="aero-action-buttons-deck">
-                  <a href="portal.html" class="btn-gel-pill gel-emerald" style="flex: 1.4; justify-content: center; font-weight: 700;">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    <span>Daftar &amp; Amankan Tiket</span>
-                  </a>
-                  <button type="button" class="btn-gel-pill gel-cyan" onclick="toggleCdPlay()" title="Putar Teaser Audio">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                    <span>Teaser Audio</span>
-                  </button>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==========================================================================
-         SECTION 2: BRAND GUIDELINE CONCEPT & 4 PILLARS (#brand-concept)
-         Source: Canva Brand Guidelines CAKFEST VOL.2
-         Theme: "Make It Pop: Turn Your Spark Into Impact"
-         Tagline: "Your Spark. Your Moment. Your Impact."
-         ========================================================================== -->
-    <section class="landing-section brand-concept-section" id="brand-concept" style="padding-top: 10px; padding-bottom: 20px;">
+    <section class="landing-section brand-concept-section" id="make-it-pop" style="padding-top: 10px; padding-bottom: 24px;">
       <div class="landing-section-header">
         <h2 style="margin: 0 0 10px 0; font-size: clamp(24px, 3.2vw, 36px);">
           MAKE IT POP: <span class="text-pop-magenta">TURN YOUR SPARK</span> <span class="text-electric-lime">INTO IMPACT</span>
         </h2>
-        <p style="font-size: 14.5px; max-width: 720px; margin: 0; color: #cbd5e1; line-height: 1.6;">
-          Empat pilar nilai penggerak Cakfest Vol.2 untuk memantik potensi, karya nyata, dan dampak positif generasi muda.
+        <p style="font-size: 14.5px; max-width: 760px; margin: 0; color: #cbd5e1; line-height: 1.6;">
+          Cakfest Vol.2 memadukan 4 pilar penggerak untuk menciptakan wadah kolaborasi, ruang kreativitas, dan kompetisi bergengsi bagi generasi muda.
         </p>
       </div>
 
-      <!-- 4 Brand Pillars (Canva Guidelines Slide 4) with Crisp Vector SVGs -->
+      <!-- 4 Brand Pillars (Canva Guidelines Slide 4) -->
       <div class="brand-pillars-strip">
         <div class="brand-pillar-card">
           <div class="brand-pillar-icon pillar-collab">
@@ -540,41 +377,20 @@
     </section>
 
     <!-- ==========================================================================
-         SECTION 3: 6 CABANG LOMBA SHOWCASE (#kompetisi)
-         Action Photo Banners, Specs, & Distinct Action Buttons
+         SECTION 2: 6 CABANG LOMBA (#kompetisi)
+         HANYA TOMBOL "DAFTAR SEKARANG" (Tanpa Tombol Booklet)
          ========================================================================== -->
     <section class="landing-section competition-section" id="kompetisi">
       
       <div class="landing-section-header">
-        <h2>6 CABANG KOMPETISI CAKFEST 2027</h2>
+        <h2>6 CABANG KOMPETISI CAKFEST VOL.2</h2>
         <p>Pilih cabang lomba impianmu dan daftarkan tim sebelum kuota penuh.</p>
-        <div style="margin-top: 12px;">
-          <button type="button" class="rulebook-quick-link" onclick="openWindowModal('rulebookModal')">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            <span>Unduh Buku Panduan Teknis Lengkap (PDF 1.8M)</span>
-          </button>
-        </div>
       </div>
 
       <div class="categories-visual-grid">
         
-        <!-- 1. CCC (Featured 2-Column Prestigious Card - PRD 6.1) -->
-        <article class="cabor-visual-card win-xp-window featured-ccc-card">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </span>
-              <span class="win-xp-title-text">CCC_Decathlon.exe</span>
-              <span class="win-xp-title-tag">// 16 Teams</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <!-- 1. Cerdas Cermat / CCC (Featured Card - referensiDESIGN.png) -->
+        <article class="cabor-visual-card featured-ccc-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80" alt="Cakrawala Champions Challenge Arena" class="cabor-thumb-photo">
             <span class="cabor-overlay-badge">
@@ -585,7 +401,7 @@
           </div>
 
           <div class="cabor-card-body-content">
-            <h4>CAKRAWALA CHAMPIONS CHALLENGE (CCC)</h4>
+            <h4>CERDAS CERMAT (CCC DECATHLON)</h4>
             <div class="cabor-sub-tagline">Multidisiplin Decathlon: Strategi Taktis, Ketangkasan, &amp; Logika Terpadu</div>
             <p class="cabor-narrative-summary">
               Ajang supremasi tertinggi perguruan tinggi memperebutkan Piala Bergilir Rektorat lewat 3 etape kompetisi terintegrasi.
@@ -603,36 +419,17 @@
             </div>
 
             <!-- Distinct Action Buttons -->
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=CCC" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('CCC')" title="Daftar Sekarang untuk kategori CCC">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook CCC">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
         </article>
 
         <!-- 2. Mobile Legends: Bang Bang -->
-        <article class="cabor-visual-card win-xp-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/></svg>
-              </span>
-              <span class="win-xp-title-text">MLBB_Championship.exe</span>
-              <span class="win-xp-title-tag">// 32 Teams</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <article class="cabor-visual-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Mobile Legends Arena" class="cabor-thumb-photo">
             <span class="cabor-overlay-badge">E-SPORTS DIVISION</span>
@@ -657,36 +454,17 @@
               </div>
             </div>
 
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=MLBB" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('MLBB')" title="Daftar Sekarang untuk kategori MLBB">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook MLBB">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
         </article>
 
         <!-- 3. 3x3 Basketball Battle -->
-        <article class="cabor-visual-card win-xp-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-              </span>
-              <span class="win-xp-title-text">Basket_3x3_Battle.exe</span>
-              <span class="win-xp-title-tag">// Half-Court</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <article class="cabor-visual-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80" alt="3x3 Basketball Court" class="cabor-thumb-photo">
             <span class="cabor-overlay-badge">SPORTS DIVISION</span>
@@ -711,36 +489,17 @@
               </div>
             </div>
 
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=BASKET" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('BASKET')" title="Daftar Sekarang untuk kategori BASKET">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook Basket">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
         </article>
 
         <!-- 4. Futsal Championship -->
-        <article class="cabor-visual-card win-xp-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
-              </span>
-              <span class="win-xp-title-text">Futsal_Cup_Arena.exe</span>
-              <span class="win-xp-title-tag">// Vinyl Court</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <article class="cabor-visual-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=600&q=80" alt="Futsal Championship" class="cabor-thumb-photo">
             <span class="cabor-overlay-badge">SPORTS DIVISION</span>
@@ -765,36 +524,17 @@
               </div>
             </div>
 
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=FUTSAL" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('FUTSAL')" title="Daftar Sekarang untuk kategori FUTSAL">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook Futsal">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
         </article>
 
         <!-- 5. Festival Tari Tradisional Kreasi -->
-        <article class="cabor-visual-card win-xp-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              </span>
-              <span class="win-xp-title-text">Tari_Tradisional.exe</span>
-              <span class="win-xp-title-tag">// Seni Kreasi</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <article class="cabor-visual-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=600&q=80" alt="Festival Tari Tradisional" class="cabor-thumb-photo">
             <span class="cabor-overlay-badge">ARTS &amp; CULTURE</span>
@@ -802,8 +542,8 @@
           </div>
 
           <div class="cabor-card-body-content">
-            <h4>TARI TRADISIONAL KREASI</h4>
-            <div class="cabor-sub-tagline">Kompetisi Tari Nusantara Kontemporer (Grup 4-8 Orang)</div>
+            <h4>MODERN DANCE &amp; TARI KREASI</h4>
+            <div class="cabor-sub-tagline">Kompetisi Modern Dance &amp; Seni Kreasi Nusantara</div>
             <p class="cabor-narrative-summary">
               Eksplorasi gerak tari nusantara kontemporer berbalut aransemen musik modern dinilai oleh maestro tari.
             </p>
@@ -819,45 +559,26 @@
               </div>
             </div>
 
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=TARI" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('TARI')" title="Daftar Sekarang untuk kategori TARI">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook Tari">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
         </article>
 
-        <!-- 6. Battle of the Bands -->
-        <article class="cabor-visual-card win-xp-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-              </span>
-              <span class="win-xp-title-text">Band_Competition.exe</span>
-              <span class="win-xp-title-tag">// Live Stage</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-
+        <!-- 6. Solo Vokal & Band Akustik -->
+        <article class="cabor-visual-card">
           <div class="cabor-banner-stage">
             <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Band Performance Arena" class="cabor-thumb-photo">
-            <span class="cabor-overlay-badge">MUSIC &amp; BAND</span>
+            <span class="cabor-overlay-badge">MUSIC &amp; VOCAL</span>
             <span class="cabor-quota-pill-top">SISA 6 SLOT</span>
           </div>
 
           <div class="cabor-card-body-content">
-            <h4>BATTLE OF THE BANDS</h4>
-            <div class="cabor-sub-tagline">Kompetisi Band Akustik &amp; Elektrik (Grup 3-7 Orang)</div>
+            <h4>SOLO VOKAL &amp; BAND AKUSTIK</h4>
+            <div class="cabor-sub-tagline">Kompetisi Solo Vokal &amp; Band Akustik Kampus</div>
             <p class="cabor-narrative-summary">
               Panggung musikalitas kampus membawakan 1 lagu wajib retro &amp; 1 lagu bebas. Pemenang tampil di Awarding Night!
             </p>
@@ -873,14 +594,10 @@
               </div>
             </div>
 
-            <div class="cabor-button-footer">
-              <a href="portal.html?cat=BAND" class="btn-cabor-apply">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            <div class="cabor-button-footer single-action">
+              <button type="button" class="btn-cabor-apply" onclick="openRegisterModal('BAND')" title="Daftar Sekarang untuk kategori BAND">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 <span>Daftar Sekarang</span>
-              </a>
-              <button type="button" class="cabor-sub-rule-link" onclick="openWindowModal('rulebookModal')" title="Unduh Rulebook Band">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
-                <span>Rulebook</span>
               </button>
             </div>
           </div>
@@ -890,373 +607,220 @@
     </section>
 
     <!-- ==========================================================================
-         SECTION 4: TEASER PORTAL PENDAFTARAN, STATUS, & BAGAN TURNAMEN
-         Card Visual Mockup & Tombol Utama Menuju Halaman Portal Khusus (portal.html)
+         SECTION 3: TIMELINE PERLOMBAAN & ACARA (#timeline)
+         4-Phase Visual Milestones & Official Schedule Table
          ========================================================================== -->
-    <section class="landing-section portal-teaser-section" id="portal-turnamen">
+    <section class="landing-section timeline-section-flow" id="timeline">
       
       <div class="landing-section-header">
-        <h2>PORTAL PENDAFTARAN, STATUS, &amp; BAGAN TURNAMEN</h2>
-        <p>Akses seluruh ekosistem kompetisi CAKFEST 2027 dalam satu portal khusus: registrasi mandiri, pelacakan verifikasi berkas, dan live score bagan pertandingan.</p>
+        <h2>TIMELINE PERLOMBAAN &amp; ACARA</h2>
+        <p>Rangkaian jadwal pelaksanaan Cakfest Vol.2 terbagi dalam 4 fase strategis mulai dari registrasi hingga Awarding Night.</p>
       </div>
 
-      <div class="win-xp-window portal-teaser-window">
-        <div class="win-xp-titlebar">
-          <div class="win-xp-title-left">
-            <span class="win-xp-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            </span>
-            <span class="win-xp-title-text">Portal_System_Gateway.exe</span>
-            <span class="win-xp-title-tag">// Online_v2.7</span>
-          </div>
-          <div class="win-xp-controls">
-            <span class="xp-ctrl-btn xp-min">_</span>
-            <span class="xp-ctrl-btn xp-max">口</span>
-            <span class="xp-ctrl-btn xp-close">&times;</span>
-          </div>
-        </div>
-        <div class="win-xp-menubar">
-          <span>File</span>
-          <span>Registrasi Mandiri</span>
-          <span>Cek Status Berkas</span>
-          <span>Live Bracket</span>
-          <span>Help</span>
+      <!-- 4-Phase Milestone Cards Deck -->
+      <div class="timeline-cards-grid">
+        <div class="timeline-phase-card">
+          <div class="phase-badge-top">FASE 01</div>
+          <div class="phase-date">01 Okt - 30 Nov 2026</div>
+          <h4>Registrasi &amp; Verifikasi</h4>
+          <p>Pendaftaran mandiri seluruh cabang lomba, pengunggahan KTM/Kartu Pelajar, serta validasi berkas administrasi tim.</p>
         </div>
 
-        <div class="portal-teaser-master-card">
-        
-        <!-- Left: Visual Mockup Illustration of Portal Features -->
-        <div class="portal-teaser-visual-col">
-          <div class="portal-mockup-window">
-            <div class="os-titlebar" style="padding:6px 12px; font-size:11px;">
-              <div class="titlebar-left">
-                <span class="led-dot"></span>
-                <span class="titlebar-text">PORTAL_SYSTEM // <span>ONLINE v2.4</span></span>
-              </div>
-              <span style="font-family:var(--font-mono); font-size:10px; color:#d8b4fe;">SECURE HTTPS</span>
-            </div>
-
-            <!-- Visual Preview Canvas -->
-            <div class="mockup-preview-body">
-              <!-- Mockup Module 1: Wizard Stepper Preview -->
-              <div class="mockup-preview-item">
-                <div class="mockup-item-header">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-                  <span>1. FORM PENDAFTARAN 6 CABOR</span>
-                  <span class="mockup-pill-badge">INTERAKTIF</span>
-                </div>
-                <div class="mockup-stepper-line">
-                  <span class="m-step active">1. Kategori</span>
-                  <span class="m-step">2. Data Tim</span>
-                  <span class="m-step">3. Berkas KTM</span>
-                </div>
-              </div>
-
-              <!-- Mockup Module 2: Instant Status Verification -->
-              <div class="mockup-preview-item">
-                <div class="mockup-item-header">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                  <span>2. PELACAK STATUS TOKEN REAL-TIME</span>
-                  <span class="mockup-status-verified">TERVERIFIKASI</span>
-                </div>
-                <div class="mockup-code-strip">
-                  <code>TOKEN: CKF-2027-VERIFIED</code>
-                  <span>TIM ALPHA • LOLOS BERKAS</span>
-                </div>
-              </div>
-
-              <!-- Mockup Module 3: Live Tournament Bracket -->
-              <div class="mockup-preview-item">
-                <div class="mockup-item-header">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 3 18 3 18 7 14 11 14 17 10 21 10 11 6 7 6 3"/></svg>
-                  <span>3. BAGAN TURNAMEN &amp; LIVE SKOR</span>
-                  <span class="mockup-pill-live">LIVE BO3/BO5</span>
-                </div>
-                <div class="mockup-bracket-mini">
-                  <div class="mini-match-node">
-                    <span>Pixel Warriors</span> <strong>1</strong>
-                  </div>
-                  <div class="mini-match-node">
-                    <span>Solar Knights</span> <strong>1</strong>
-                  </div>
-                  <span class="mini-vs-tag">GAME 3 LIVE</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <div class="timeline-phase-card">
+          <div class="phase-badge-top">FASE 02</div>
+          <div class="phase-date">15 Desember 2026</div>
+          <h4>Technical Meeting &amp; Drawing</h4>
+          <p>Sosialisasi regulasi pertandingan dan drawing bagan kompetisi secara hybrid (Auditorium &amp; Google Meet).</p>
         </div>
 
-        <!-- Right: Action Deck & Narrative -->
-        <div class="portal-teaser-action-col">
-          <div class="portal-feature-pills">
-            <span class="tag-capsule-chip accent">AKSES TERPUSAT</span>
-            <span class="tag-capsule-chip">AUTOMATIC SYSTEM</span>
-          </div>
+        <div class="timeline-phase-card">
+          <div class="phase-badge-top highlight">FASE 03</div>
+          <div class="phase-date">08 - 09 Januari 2027</div>
+          <h4>Babak Penyisihan &amp; Semifinal</h4>
+          <p>Opening Ceremony, laga perempat final seluruh cabor, serta penampilan modern dance &amp; showcase band pendukung.</p>
+        </div>
 
-          <h3>PORTAL RESMI PESERTA &amp; TURNAMEN</h3>
-          <p>
-            Semua modul pendaftaran dan pertandingan telah dipusatkan di halaman portal khusus agar proses registrasi dan pemantauan live score lebih fokus, cepat, dan nyaman.
-          </p>
-
-          <ul class="portal-benefit-checklist">
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Registrasi Mandiri Tanpa Antre:</strong> Pilih dari 6 cabor, unggah berkas KTM &amp; bukti transfer langsung tervalidasi.</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Pelacakan Status Berkas 24 Jam:</strong> Cek status verifikasi token instan (Terverifikasi, Perlu Revisi, Menunggu, Ditolak).</span>
-            </li>
-            <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Bagan Turnamen &amp; Live Skor:</strong> Skema bracket gugur Challonge interaktif dan klasemen podium juara.</span>
-            </li>
-          </ul>
-
-          <div class="portal-cta-buttons-deck">
-            <a href="portal.html" class="btn-portal-primary-action">
-              <span>MASUK KE PORTAL PENDAFTARAN</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <div class="portal-sub-action-links" style="margin-top: 14px; text-align: center;">
-              <a href="portal.html#status" class="portal-inline-text-link">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <span>Sudah punya token? Lacak status berkas pendaftaran di sini &rarr;</span>
-              </a>
-            </div>
-          </div>
+        <div class="timeline-phase-card">
+          <div class="phase-badge-top highlight">FASE 04</div>
+          <div class="phase-date">10 Januari 2027</div>
+          <h4>Grand Final &amp; Awarding</h4>
+          <p>Laga puncak Grand Final perebutan juara, penganugerahan Piala Bergilir Rektorat, dan penutupan festival spektakuler.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-    <!-- ==========================================================================
-         SECTION 6: JADWAL & FAQ (#jadwal-faq)
-         Timeline Schedule Table & Interactive Accordion FAQ
-         ========================================================================== -->
-    <section class="landing-section schedule-faq-section" id="jadwal-faq">
-      
-      <div class="landing-section-header">
-        <h2>JADWAL AGENDA &amp; PERTANYAAN UMUM</h2>
-        <p>Rundown pelaksanaan agenda festival 3 fase dan jawaban atas pertanyaan teknis regulasi peserta.</p>
+      <!-- Schedule Table Clean Festive Card -->
+      <div class="schedule-clean-card" style="max-width: 960px; margin: 0 auto;">
+        <div class="schedule-card-panel">
+          <h4>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>TABEL RUNDOWN JADWAL RESMI CAKFEST VOL.2</span>
+          </h4>
+          <table class="clean-schedule-table">
+            <thead>
+              <tr>
+                <th>Tanggal Pelaksanaan</th>
+                <th>Agenda Kegiatan</th>
+                <th>Lokasi &amp; Keterangan</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>01 Okt - 30 Nov 2026</strong></td>
+                <td>Pendaftaran Gelombang 1 (Batch 1) Seluruh Cabor</td>
+                <td>Online via Website Resmi</td>
+                <td><span class="tag-capsule-chip accent small">SEDANG BERJALAN</span></td>
+              </tr>
+              <tr>
+                <td><strong>01 Des - 10 Des 2026</strong></td>
+                <td>Verifikasi Berkas KTM &amp; Bukti Pembayaran</td>
+                <td>Helpdesk Panitia Cakfest</td>
+                <td><span class="tag-capsule-chip small">AKAN DATANG</span></td>
+              </tr>
+              <tr>
+                <td><strong>15 Des 2026 (19.30 WIB)</strong></td>
+                <td>Technical Meeting &amp; Live Drawing Bagan Turnamen</td>
+                <td>Auditorium &amp; Google Meet Live</td>
+                <td><span class="tag-capsule-chip small">AKAN DATANG</span></td>
+              </tr>
+              <tr>
+                <td><strong>08 Jan 2027</strong></td>
+                <td>Opening Ceremony &amp; Babak Perempat Final</td>
+                <td>Gelanggang Olahraga &amp; Hall Utama</td>
+                <td><span class="tag-capsule-chip small">AKAN DATANG</span></td>
+              </tr>
+              <tr>
+                <td><strong>09 Jan 2027</strong></td>
+                <td>Babak Semifinal &amp; Modern Dance Showcase</td>
+                <td>Main Stage Cakrawala University</td>
+                <td><span class="tag-capsule-chip small">AKAN DATANG</span></td>
+              </tr>
+              <tr>
+                <td><strong>10 Jan 2027</strong></td>
+                <td>Grand Final &amp; Awarding Ceremony Night</td>
+                <td>Panggung Spektakuler Cakfest Vol.2</td>
+                <td><span class="tag-capsule-chip accent small">PUNCAK ACARA</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="schedule-faq-flex">
-        
-        <!-- Schedule Table in Windows XP Window -->
-        <div class="win-xp-window schedule-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              </span>
-              <span class="win-xp-title-text">Official_Schedule.exe</span>
-              <span class="win-xp-title-tag">// 3 Phases Rundown</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-          <div class="schedule-card-panel">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              <span>JADWAL RESMI AGENDA EVENT</span>
-            </h4>
-            <table class="clean-schedule-table">
-              <thead>
-                <tr>
-                  <th>Tanggal</th>
-                  <th>Agenda Kegiatan</th>
-                  <th>Keterangan</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>01 Okt - 30 Nov 2026</strong></td>
-                  <td>Pendaftaran Mandiri Seluruh Cabor</td>
-                  <td><span class="tag-capsule-chip small">FASE 1</span></td>
-                </tr>
-                <tr>
-                  <td><strong>01 Des - 10 Des 2026</strong></td>
-                  <td>Verifikasi Berkas KTM &amp; Pembayaran</td>
-                  <td><span class="tag-capsule-chip small">FASE 1</span></td>
-                </tr>
-                <tr>
-                  <td><strong>15 Des 2026</strong></td>
-                  <td>Technical Meeting &amp; Live Drawing Bagan</td>
-                  <td>Hybrid (Auditorium &amp; GMeet)</td>
-                </tr>
-                <tr>
-                  <td><strong>08 Jan 2027</strong></td>
-                  <td>Opening Ceremony &amp; Babak Perempat Final</td>
-                  <td><span class="tag-capsule-chip accent small">FASE 2</span></td>
-                </tr>
-                <tr>
-                  <td><strong>09 Jan 2027</strong></td>
-                  <td>Babak Semifinal &amp; Modern Dance Showcase</td>
-                  <td>Main Stage Cakrawala</td>
-                </tr>
-                <tr>
-                  <td><strong>10 Jan 2027</strong></td>
-                  <td>Grand Final &amp; Awarding Ceremony Night</td>
-                  <td>Penyerahan Piala Bergilir</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- FAQ Accordion in Windows XP Window -->
-        <div class="win-xp-window faq-window">
-          <div class="win-xp-titlebar">
-            <div class="win-xp-title-left">
-              <span class="win-xp-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              </span>
-              <span class="win-xp-title-text">FAQ_Help_Desk.exe</span>
-              <span class="win-xp-title-tag">// Regulations</span>
-            </div>
-            <div class="win-xp-controls">
-              <span class="xp-ctrl-btn xp-min">_</span>
-              <span class="xp-ctrl-btn xp-max">口</span>
-              <span class="xp-ctrl-btn xp-close">&times;</span>
-            </div>
-          </div>
-          <div class="faq-card-panel">
-            <h4>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-              <span>PERTANYAAN UMUM (FAQ)</span>
-            </h4>
-            
-            <div class="faq-row-item">
-              <h5>Apakah satu peserta boleh mendaftar lebih dari satu cabor?</h5>
-              <p>Boleh mendaftar di kategori seni dan olahraga/e-sports asalkan jadwal pertandingan tidak bentrok saat babak live event berlangsung.</p>
-            </div>
-
-            <div class="faq-row-item">
-              <h5>Bagaimana jika KTM anggota tim belum terbit dari kampus?</h5>
-              <p>Dapat menggunakan Surat Keterangan Mahasiswa Aktif atau Kartu Rencana Studi (KRS) semester berjalan yang sah.</p>
-            </div>
-
-            <div class="faq-row-item">
-              <h5>Berapa lama proses verifikasi berkas oleh panitia?</h5>
-              <p>Maksimal 1x24 jam hari kerja. Progres dapat dipantau di tab <em>Pendaftaran &amp; Cek Status</em>.</p>
-            </div>
-
-            <div class="faq-row-item">
-              <h5>Apakah biaya pendaftaran dapat di-refund?</h5>
-              <p>Biaya pendaftaran tidak dapat di-refund jika pembatalan sepihak dari tim, namun dikembalikan 100% jika kuota penuh saat pendaftaran.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
     </section>
 
     <!-- ==========================================================================
-         SECTION 7: RETRO POLAROID DOKUMENTASI FESTIVAL (#galeri)
+         SECTION 4: FAQ (#faq)
+         Interactive Accordion Pertanyaan & Jawaban Seputar Cakfest Vol.2
          ========================================================================== -->
-    <section class="landing-section gallery-section" id="galeri">
-      <div class="win-xp-window gallery-window">
-        <div class="win-xp-titlebar">
-          <div class="win-xp-title-left">
-            <span class="win-xp-icon">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            </span>
-            <span class="win-xp-title-text">Festival_Archive_Gallery.exe</span>
-            <span class="win-xp-title-tag">// 4 Photos</span>
-          </div>
-          <div class="win-xp-controls">
-            <span class="xp-ctrl-btn xp-min">_</span>
-            <span class="xp-ctrl-btn xp-max">口</span>
-            <span class="xp-ctrl-btn xp-close">&times;</span>
-          </div>
-        </div>
-        <div class="win-xp-menubar">
-          <span>File</span>
-          <span>View Slideshow</span>
-          <span>Zoom (100%)</span>
-          <span>Help</span>
-        </div>
-        <div class="festival-gallery-strip">
-          <div class="landing-section-header" style="margin-bottom: 16px;">
-            <h2>DOKUMENTASI KESERUAN EDISI SEBELUMNYA</h2>
-            <p>Potret momen atmosfer antusiasme kontingen dan penonton festival dari edisi lampau.</p>
-          </div>
+    <section class="landing-section faq-section-flow" id="faq">
+      
+      <div class="landing-section-header">
+        <h2>FREQUENTLY ASKED QUESTIONS (FAQ)</h2>
+        <p>Pertanyaan yang paling sering diajukan peserta seputar registrasi, berkas, regulasi, dan akomodasi.</p>
+      </div>
 
-          <div class="gallery-photos-grid">
-            <div class="polaroid-frame-card">
-              <div class="polaroid-image-box">
-                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80" alt="Main Stage Arena Crowd">
+      <div class="faq-clean-card" style="max-width: 960px; margin: 0 auto;">
+        <div class="faq-card-panel">
+          <div class="faq-accordion-list">
+            
+            <div class="faq-accordion-item active">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Siapa saja yang berhak mengikuti kompetisi di Cakfest Vol.2?</h5>
+                <span class="faq-toggle-icon">+</span>
               </div>
-              <div class="polaroid-caption">Opening Stage Crowd '26</div>
-            </div>
-            <div class="polaroid-frame-card">
-              <div class="polaroid-image-box">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Esports Battle Arena">
+              <div class="faq-accordion-body">
+                Cakfest Vol.2 terbuka untuk pelajar SMA/SMK/MA sederajat serta mahasiswa aktif D3/D4/S1 dari seluruh perguruan tinggi di Indonesia. Setiap peserta wajib melampirkan kartu identitas pelajar/KTM yang sah.
               </div>
-              <div class="polaroid-caption">Grand Final Match Intensity</div>
             </div>
-            <div class="polaroid-frame-card">
-              <div class="polaroid-image-box">
-                <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=600&q=80" alt="Basketball Cup Final">
+
+            <div class="faq-accordion-item">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Bagaimana mekanisme pendaftaran tim?</h5>
+                <span class="faq-toggle-icon">+</span>
               </div>
-              <div class="polaroid-caption">Half-Court Champion Dunk</div>
-            </div>
-            <div class="polaroid-frame-card">
-              <div class="polaroid-image-box">
-                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Awarding Night Concert">
+              <div class="faq-accordion-body">
+                Pendaftaran dilakukan secara mandiri dengan mengeklik tombol <strong>Daftar Sekarang</strong> pada cabang lomba yang dipilih. Isi formulir tim, lengkapi data kontak ketua, dan ikuti instruksi pembayaran registrasi.
               </div>
-              <div class="polaroid-caption">Awarding Concert Night</div>
             </div>
-            <div class="polaroid-frame-card" style="cursor:pointer;" onclick="toggleCdPlay()" title="Klik untuk memutar Compact Disc OST">
-              <div class="polaroid-image-box" style="background:#090e1a; display:flex; align-items:center; justify-content:center;">
-                <img src="assetsdisc.png" alt="Holographic Compact Disc Official Album" style="width:100%; height:100%; object-fit:cover;">
+
+            <div class="faq-accordion-item">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Apakah anggota tim boleh berasal dari sekolah atau kampus yang berbeda?</h5>
+                <span class="faq-toggle-icon">+</span>
               </div>
-              <div class="polaroid-caption">Holo Compact Disc Album (assetsdisc)</div>
+              <div class="faq-accordion-body">
+                Untuk cabang CCC, Futsal, dan 3x3 Basketball, seluruh anggota tim wajib berasal dari institusi yang sama. Sedangkan untuk cabang E-Sports MLBB dan Battle of the Bands, diperbolehkan tim gabungan (mix) antarinstitusi dengan menyertakan surat persetujuan manajer tim.
+              </div>
             </div>
+
+            <div class="faq-accordion-item">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Bagaimana jika KTM anggota tim belum terbit dari kampus?</h5>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-accordion-body">
+                Peserta dapat menyertakan Surat Keterangan Mahasiswa Aktif dari dekanat/fakultas atau Kartu Rencana Studi (KRS) semester berjalan yang telah dilegalisasi secara sah.
+              </div>
+            </div>
+
+            <div class="faq-accordion-item">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Kapan Technical Meeting (TM) diselenggarakan dan apakah wajib hadir?</h5>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-accordion-body">
+                Technical Meeting dijadwalkan pada tanggal 15 Desember 2026 pukul 19.30 WIB secara hybrid (Auditorium &amp; Google Meet). Minimal 1 orang perwakilan (kapten/manajer) wajib menghadiri TM untuk pengundian bagan (drawing).
+              </div>
+            </div>
+
+            <div class="faq-accordion-item">
+              <div class="faq-accordion-header" onclick="toggleFaq(this)">
+                <h5>Apakah biaya pendaftaran dapat di-refund jika batal bertanding?</h5>
+                <span class="faq-toggle-icon">+</span>
+              </div>
+              <div class="faq-accordion-body">
+                Biaya pendaftaran tidak dapat di-refund jika pembatalan sepihak dilakukan oleh tim setelah verifikasi berkas. Pengembalian dana 100% hanya berlaku jika kuota cabang lomba telah penuh sebelum proses validasi pembayaran disetujui.
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
+
     </section>
 
   </main>
 
   <!-- ==========================================================================
-       LANDING PAGE FOOTER & RETRO OS TASKBAR DOCK
+       SECTION 5: FOOTER & RETRO TASKBAR
        ========================================================================== -->
   <footer class="site-main-footer">
     <div class="footer-inner-grid">
       
       <div class="footer-col brand-col">
         <div class="footer-logo">
-          <strong>CAKFEST <span>2027</span></strong>
+          <strong>CAKFEST <span style="color:#fd47d6;">VOL.2</span></strong>
         </div>
-        <p>Festival akbar kompetisi mahasiswa dan pelajar nasional persembahan BEM &amp; Rektorat Universitas Cakrawala.</p>
-        <span class="footer-copy-text">&copy; 2026-2027 Riset And Technology - SGA Universitas Cakrawala. Cakfest Landing Page. All rights reserved.</span>
+        <p>Make It Pop: Turn Your Spark Into Impact. Festival akbar kompetisi mahasiswa dan pelajar nasional persembahan Universitas Cakrawala.</p>
+        <span class="footer-copy-text">&copy; 2026-2027 SGA Universitas Cakrawala. Cakfest Vol.2 Landing Page. All rights reserved.</span>
       </div>
 
       <div class="footer-col">
         <h6>NAVIGASI CEPAT</h6>
         <div class="footer-links-list">
-          <a href="#beranda">Beranda Utama</a>
-          <a href="#guest-star">Bintang Tamu</a>
+          <a href="#beranda">Make It Pop</a>
           <a href="#kompetisi">6 Cabang Lomba</a>
-          <a href="portal.html#pendaftaran">Form Pendaftaran</a>
-          <a href="portal.html#bagan">Bagan Turnamen</a>
-          <a href="#jadwal-faq">Jadwal &amp; FAQ</a>
+          <a href="#timeline">Timeline Acara</a>
+          <a href="#faq">FAQ</a>
         </div>
       </div>
 
       <div class="footer-col">
         <h6>DOKUMEN RESMI</h6>
         <div class="footer-links-list">
-          <a href="javascript:void(0)" onclick="openWindowModal('rulebookModal')">Unduh Rulebook Teknis (PDF)</a>
-          <a href="javascript:void(0)" onclick="openWindowModal('gmeetModal')">Tautan Technical Meeting (GMeet)</a>
-          <a href="javascript:void(0)" onclick="openWindowModal('cmsModal')">Akses Wasit &amp; Juri (CMS)</a>
+          <a href="#kompetisi">Buku Panduan Teknis (PDF)</a>
+          <a href="#timeline">Jadwal Technical Meeting</a>
+          <a href="#faq">Pusat Informasi &amp; Regulasi</a>
         </div>
       </div>
 
@@ -1275,19 +839,15 @@
 
     </div>
 
-    <!-- Retro 88x31 Web Badges Bar (Direct Tribute to referensi3.png) -->
+    <!-- Retro 88x31 Web Badges Bar -->
     <div class="retro-web-badges-row">
       <div class="web-badge-item">
         <span class="badge-prefix">HTML</span>
-        <span class="badge-suffix">4.01 VALID</span>
+        <span class="badge-suffix">5.0 VALID</span>
       </div>
       <div class="web-badge-item">
-        <span class="badge-prefix">SCREEN</span>
-        <span class="badge-suffix">1024x768 OPT</span>
-      </div>
-      <div class="web-badge-item" title="Certified for Windows XP // Luna Edition">
-        <span class="badge-prefix" style="background:#0072c6; color:#fff;">WIN XP</span>
-        <span class="badge-suffix">CERTIFIED</span>
+        <span class="badge-prefix">MAKE IT</span>
+        <span class="badge-suffix" style="background:#fd47d6; color:#fff;">POP</span>
       </div>
       <div class="web-badge-item">
         <span class="badge-prefix">STEREO</span>
@@ -1295,204 +855,14 @@
       </div>
       <div class="web-badge-item">
         <span class="badge-prefix">CAKFEST</span>
-        <span class="badge-suffix">2027 CYBER</span>
+        <span class="badge-suffix">VOL.2</span>
       </div>
       <div class="web-badge-item">
         <span class="badge-prefix">NO SPAM</span>
         <span class="badge-suffix">100% SECURE</span>
       </div>
     </div>
-
-    <!-- Retro OS Taskbar Bottom Strip (referensi3 tribute) -->
-    <div class="os-taskbar-footer">
-      <div class="taskbar-start-badge" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-        <svg viewBox="0 0 24 24">
-          <rect x="2" y="3" width="9" height="8" fill="#e73827"/>
-          <rect x="13" y="3" width="9" height="8" fill="#53a93f"/>
-          <rect x="2" y="13" width="9" height="8" fill="#245edb"/>
-          <rect x="13" y="13" width="9" height="8" fill="#fbb034"/>
-        </svg>
-        <span>start</span>
-      </div>
-
-      <div class="taskbar-tray-info">
-        <span>STATUS: <strong>SISTEM ONLINE</strong></span>
-        <span>LOKASI: <strong>UNIV CAKRAWALA</strong></span>
-        <span id="taskbarClock">Sun 27.09 22:20</span>
-      </div>
-    </div>
   </footer>
-
-  <!-- ==========================================================================
-       MODAL DIALOGS (RULEBOOK RESMI, GOOGLE MEET TM, CMS OPERATOR)
-       ========================================================================== -->
-
-  <!-- Modal 1: PROMINENT OFFICIAL RULEBOOK MODAL -->
-  <div class="modal-overlay-backdrop" id="rulebookModal">
-    <div class="modal-window-dialog">
-      <div class="os-titlebar">
-        <div class="titlebar-left">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <span class="titlebar-text">BUKU PANDUAN TEKNIS RESMI // CAKFEST 2027</span>
-        </div>
-        <button class="titlebar-btn" onclick="closeWindowModal('rulebookModal')">X</button>
-      </div>
-
-      <div class="modal-body-pad">
-        
-        <!-- Document Preview Card -->
-        <div class="rulebook-doc-card">
-          <div class="rulebook-icon-tile">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-            <span>PDF</span>
-          </div>
-          <div class="rulebook-meta-tile">
-            <h4>Buku Pedoman Teknis &amp; Regulasi Peserta v2.4</h4>
-            <p>Berisi seluruh regulasi pertandingan 6 cabor, ketentuan KTM, tata tertib panggung, sistem poin decathlon CCC, jadwal technical meeting, dan format walk-out.</p>
-            <div class="doc-specs-tags">
-              <span>UKURAN: 1.8 MB</span>
-              <span>FORMAT: PDF RESMI</span>
-              <span>TERVALIDASI PANITIA</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="rulebook-guideline-bullets">
-          <h6>POIN PENTING REGULASI:</h6>
-          <ol>
-            <li>Seluruh atlet dan kontingen wajib berstatus mahasiswa atau pelajar aktif yang dibuktikan dengan KTM/Kartu Pelajar yang sah.</li>
-            <li>Toleransi keterlambatan kehadiran di arena pertandingan maksimal 15 menit dari jadwal rundown sebelum dinyatakan Walk-Out (W.O.).</li>
-            <li>Keputusan dewan juri dan wasit bersertifikasi bersifat mutlak, independen, dan tidak dapat diganggu gugat.</li>
-          </ol>
-        </div>
-
-        <div class="modal-footer-actions">
-          <button class="btn-gel-secondary" onclick="closeWindowModal('rulebookModal')">Tutup</button>
-          <button class="btn-gel-action" onclick="downloadPdf()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>UNDUH PDF SEKARANG (1.8 MB)</span>
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2: Technical Meeting Google Meet -->
-  <div class="modal-overlay-backdrop" id="gmeetModal">
-    <div class="modal-window-dialog">
-      <div class="os-titlebar">
-        <div class="titlebar-left">
-          <span class="titlebar-text">UNDANGAN TECHNICAL MEETING VIRTUAL</span>
-        </div>
-        <button class="titlebar-btn" onclick="closeWindowModal('gmeetModal')">X</button>
-      </div>
-      <div class="modal-body-pad">
-        <h4 style="color:var(--status-verified); font-family:var(--font-display); font-size:15px; margin-bottom:8px;">GOOGLE MEET TM CAKFEST 2027</h4>
-        <p style="font-size:13px; color:#cbd5e1; line-height:1.6;">
-          Jadwal: <strong>15 Desember 2026, Pukul 19.30 WIB</strong><br>
-          Ruang Rapat: <code>meet.google.com/ckf-2027-tmeet</code>
-        </p>
-        <div class="modal-footer-actions" style="margin-top:16px;">
-          <button class="btn-gel-secondary" onclick="closeWindowModal('gmeetModal')">Tutup</button>
-          <button class="btn-gel-action" onclick="copyMeetLink()">Salin Tautan</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3: Operator CMS Panel (PRD 7.B) -->
-  <div class="modal-overlay-backdrop" id="cmsModal">
-    <div class="modal-window-dialog">
-      <div class="os-titlebar cms-dialog-header">
-        <div class="titlebar-left">
-          <div class="titlebar-icon-box">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <span class="titlebar-text">PANEL CMS INPUT SKOR WASIT</span>
-        </div>
-        <button class="titlebar-btn" onclick="closeWindowModal('cmsModal')">X</button>
-      </div>
-
-      <div class="modal-body-pad">
-        <form onsubmit="event.preventDefault(); submitCmsScore();">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
-            <div class="form-input-block">
-              <label>1. Pilih Cabang:</label>
-              <select class="clean-dropdown-select" id="cmsCatSelect" onchange="onCmsDisciplineChange()">
-                <option value="MLBB">Mobile Legends (5v5)</option>
-                <option value="CCC">Cakrawala Champions (CCC)</option>
-                <option value="BASKET">3x3 Basketball</option>
-                <option value="FUTSAL">Futsal Cup</option>
-              </select>
-            </div>
-            <div class="form-input-block">
-              <label>2. Pilih Match Slot:</label>
-              <select class="clean-dropdown-select" id="cmsMatchSelect" onchange="onCmsMatchChange()">
-                <option value="qf4">Perempat Final 4 (QF4)</option>
-                <option value="sf1">Semifinal 1 (SF1)</option>
-                <option value="sf2">Semifinal 2 (SF2)</option>
-                <option value="final">Grand Final</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- Score Workbench -->
-          <div class="cms-match-workbench">
-            <div class="cms-team-unit">
-              <label id="cmsTeam1Label">Pixel Warriors</label>
-              <input type="number" class="cms-score-box" id="cmsScore1" value="2" min="0" max="99">
-            </div>
-            <div style="font-family:var(--font-display); font-size:20px; font-weight:800; color:#64748b;">VS</div>
-            <div class="cms-team-unit">
-              <label id="cmsTeam2Label">Solar Knights</label>
-              <input type="number" class="cms-score-box" id="cmsScore2" value="1" min="0" max="99">
-            </div>
-          </div>
-
-          <div class="cms-radios-group">
-            <label><input type="radio" name="cmsMatchStatus" value="live" checked> Sedang Bertanding (Live)</label>
-            <label><input type="radio" name="cmsMatchStatus" value="finished"> Selesai (Final)</label>
-          </div>
-
-          <div style="display:flex; justify-content:flex-end; gap:8px;">
-            <button type="button" class="btn-gel-secondary" onclick="closeWindowModal('cmsModal')">Batal</button>
-            <button type="submit" class="btn-gel-action">SIMPAN &amp; PUBLIKASIKAN</button>
-          </div>
-        </form>
-
-        <!-- Audit Trail Table -->
-        <table class="audit-log-table">
-          <thead>
-            <tr>
-              <th>Waktu</th>
-              <th>Cabor</th>
-              <th>Match</th>
-              <th>Skor Disahkan</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="cmsAuditLogTbody">
-            <tr>
-              <td>21:40:12</td>
-              <td>MLBB</td>
-              <td>QF3</td>
-              <td>Garuda Cyber (2) - Astralis ID (0)</td>
-              <td><span style="color:var(--status-verified);">CONFIRMED</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <!-- Floating Toast Notification -->
-  <div class="floating-toast-alert" id="systemToast">
-    <div>
-      <strong id="toastTitle">SISTEM UPDATE</strong>
-      <span id="toastDesc">Data berhasil diperbarui.</span>
-    </div>
-  </div>
 
   <script src="app.js"></script>
 </body>
