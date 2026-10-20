@@ -1317,7 +1317,7 @@ body.crt-active {
 .winamp-player-skin {
   position: absolute;
   top: 16px;
-  left: 18px;
+  right: 18px;
   z-index: 10;
   width: 320px;
   background: linear-gradient(180deg, #d8dce4 0%, #b4bac6 45%, #9aa1af 100%);
@@ -9133,5 +9133,58 @@ p, .hero-holo-lead-desc, .cabor-narrative-summary, .timeline-phase-card p, .faq-
 
   .digit-number {
     font-size: 19px !important;
+  }
+}
+
+/* ==========================================================================
+   HERO COPY BOX DECOR LAYERS (CD discs, low opacity)
+   ========================================================================== */
+.hero-holo-left-content {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-holo-left-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-holo-left-content::before {
+  content: "";
+  position: absolute;
+  right: -10%;
+  bottom: -14%;
+  width: min(72%, 430px);
+  aspect-ratio: 1040 / 1090;
+  background: url("disc_overlay.webp") center / contain no-repeat;
+  opacity: 0.13;
+  transform: rotate(-6deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  /* Winamp off on mobile: right visual column removed */
+  .hero-holo-right-visual {
+    display: none !important;
+  }
+
+  /* Hero foil art becomes low-opacity texture inside the copy box */
+  .hero-holo-left-content::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("hero_holo_visual_2x.webp") center / cover no-repeat;
+    opacity: 0.09;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-holo-left-content::before {
+    right: -22%;
+    bottom: -8%;
+    width: 96%;
+    opacity: 0.11;
   }
 }
