@@ -9153,14 +9153,10 @@ p, .hero-holo-lead-desc, .cabor-narrative-summary, .timeline-phase-card p, .faq-
 .hero-holo-left-content::before {
   content: "";
   position: absolute;
-  right: 2%;
-  top: 0;
-  bottom: auto;
-  width: min(54%, 420px);
-  aspect-ratio: 1920 / 1339;
-  background: url("disc_overlay.webp") center / contain no-repeat;
-  opacity: 0.2;
-  transform: rotate(-8deg);
+  inset: 0;
+  background: url("disc_overlay.webp") 62% 38% / cover no-repeat;
+  opacity: 0.12;
+  transform: rotate(-8deg) scale(1.06);
   pointer-events: none;
   z-index: 0;
 }
@@ -9183,10 +9179,8 @@ p, .hero-holo-lead-desc, .cabor-narrative-summary, .timeline-phase-card p, .faq-
   }
 
   .hero-holo-left-content::before {
-    top: auto;
-    right: -14%;
-    bottom: -6%;
-    width: 108%;
-    opacity: 0.13;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
   }
 }
